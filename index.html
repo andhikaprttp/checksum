@@ -7,6 +7,24 @@
   <title>Checksum</title>
 </head>
 <body>
-  
+    <label for="data-input">Masukkan Data:</label>
+    <input type="text" id="data-input">
+    <button onclick="calculateChecksum()">Hitung Checksum</button>
+    <p>Hasil:</p>
+    <div id="result"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/core.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/sha256.js"></script>
+    <script>
+      function calculateChecksum() {
+        const data = document.getElementById("data-input").value;
+        
+        // menghitung nilai checksum menggunakan algoritma SHA-256
+        const checksum = CryptoJS.SHA256(data).toString();
+
+        // menampilkan hasil checksum pada halaman web
+        document.getElementById("result").innerHTML = `Data: ${data}<br>Checksum: ${checksum}`;
+      }
+    </script>
 </body>
 </html>
