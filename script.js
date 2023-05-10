@@ -1,3 +1,4 @@
+// fungsi hitungsum dan mengambil data input
 function hitungsum() {
   const data = document.getElementById("data-input").value;
 
